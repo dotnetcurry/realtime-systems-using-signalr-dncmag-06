@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MyWinRTHubClient</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script src="js/jquery.signalR-1.0.1.js"></script>
+
+    <!-- MyWinRTHubClient references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body>
+    Id:<input type="text" id="id" name="id" />
+    Name:
+    <input type="text" id="name" name="name" />
+    <br />
+    <br />
+    <input type="button" value="Add" id="add" name="add" />
+    <input type="button" value="Refresh" id="refresh" name="refresh" />
+    <div id="result" />
+
+    <script type="text/javascript">
+        function refreshCustomers(result) {
+            var resultDiv = $("#result");
+            resultDiv.html("");
+            resultDiv.append("<ul>");
+            $(result).each(function (index, item) {
+                resultDiv.append("<li>(" + item.Id + ") " + item.Name + "</li>");
+            });
+            resultDiv.append("</ul>");
+        }
+
+        $(function () {
+            var connection = $.hubConnection('http://localhost:3448/');
+            connection.start();
+
+            var myHub = connection.createHubProxy("myHubServer");
+
+            myHub.on('refreshCustomers', function (result) {
+                refreshCustomers(result);
+            });
+
+            $("#add").click(function () {
+                myHub.invoke("add", ({ id: $("#id").val(), name: $("#name").val() }));
+            });
+
+            $("#refresh").click(function () {
+                myHub.invoke("all").done(function (result) {
+                    refreshCustomers(result);
+                })
+            });
+        });
+    </script>
+</body>
+</html>

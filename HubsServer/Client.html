@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="Scripts/jquery.signalR-1.0.1.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script type="text/javascript">
+        function refreshCustomers(result)
+        {
+            var resultDiv = $("#result");
+            resultDiv.html("");
+            resultDiv.append("<ul>");
+            $(result).each(function (index, item) {
+                resultDiv.append("<li>(" + item.Id + ") " + item.Name + "</li>");
+            });
+            resultDiv.append("</ul>");
+        }
+        $(document).ready(function () {
+            var myHub = $.connection.myHubServer;
+
+            myHub.client.refreshCustomers = function (result) {
+                refreshCustomers(result);
+            };
+
+            $("#add").click(function () {
+                myHub.server.add({ id: $("#id").val(), name: $("#name").val() });
+            });
+
+            $("#refresh").click(function () {
+                myHub.server.all().done(function (result) {
+                    refreshCustomers(result);
+                })
+            });
+
+            $.connection.hub.start();
+        });
+    </script>
+</head>
+<body>
+    Id:<input type="text" id="id" name="id" />
+    Name:
+    <input type="text" id="name" name="name" />
+    <br />
+    <br />
+    <input type="button" value="Add" id="add" name="add" />
+    <input type="button" value="Refresh" id="refresh" name="refresh" />
+    <div id="result" />
+</body>
+</html>

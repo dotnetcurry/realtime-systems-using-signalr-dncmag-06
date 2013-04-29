@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HubsServer", "HubsServer\HubsServer.csproj", "{EBA56740-2E0F-4B77-807C-DA9094EC13DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBA56740-2E0F-4B77-807C-DA9094EC13DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA56740-2E0F-4B77-807C-DA9094EC13DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA56740-2E0F-4B77-807C-DA9094EC13DE}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{EBA56740-2E0F-4B77-807C-DA9094EC13DE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EBA56740-2E0F-4B77-807C-DA9094EC13DE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EBA56740-2E0F-4B77-807C-DA9094EC13DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA56740-2E0F-4B77-807C-DA9094EC13DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBA56740-2E0F-4B77-807C-DA9094EC13DE}.Release|ARM.ActiveCfg = Release|Any CPU
+		{EBA56740-2E0F-4B77-807C-DA9094EC13DE}.Release|x64.ActiveCfg = Release|Any CPU
+		{EBA56740-2E0F-4B77-807C-DA9094EC13DE}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
