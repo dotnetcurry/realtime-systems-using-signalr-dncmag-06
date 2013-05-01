@@ -10,3 +10,11 @@ Getting Started
 * Make sure the HubServer is running before you try to connect either the Console client or the WinRT client.
 
 
+This code is a part of the [DNC Magazine Issue 6 (May-June 2013)](http://www.dotnetcurry.com/magazine/dnc-magazine-issue6.aspx). This magazine is absolutely free. [Subscribe now](http://www.dotnetcurry.com/magazine)
+
+* Author  : [Filip Ekberg](http://www.dotnetcurry.com/)
+* Twitter : [@fekberg](http://www.twitter.com/fekberg)
+* Date    : April 2013
+* WebSite : [DNC Magazine](http://www.dncmagazine.com)
+* GitHub  : [Repository Here](https://github.com/dotnetcurry/realtime-systems-using-signalr-dncmag-06) 
+ 
